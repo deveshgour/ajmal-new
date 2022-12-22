@@ -1,0 +1,67 @@
+.commonModal{ position: relative;
+    // .modal{ height: 0%;
+    //  &.show{
+    //     height: 100%;
+    //     transition: 1s cubic-bezier(0.35, 0, 0, 1);
+    //  }
+    // }
+    .modal.fade .modal-dialog.modal-dialog-slideout {
+        -webkit-transform: translate(0, -100%)scale(1);
+        transform: translate(0, -100%)scale(1);
+      }
+      .modal.fade.show .modal-dialog.modal-dialog-slideout {
+        -webkit-transform: translate(0, 0);
+        transform: translate(0, 0);
+        transition: 1s cubic-bezier(0.35, 0, 0, 1);
+       
+      }
+    .modal-dialog{
+        margin: 15px;min-height: calc(100% - 30px); margin:0 auto;
+        @include media-breakpoint-up(sm) {
+            margin: 15px auto;
+        }
+    }
+    .modal-lg{max-width: 1040px;}
+    .modal-md{max-width: 480px;}
+    .modal-sm{max-width: 345px;}
+    &__title{font-size: 22px;margin-bottom: 40px;}
+	.modal-content{
+        border-radius: 20px;overflow: hidden;border:0;
+		.modal-header {
+            border: 0px; margin-bottom: 30px;padding:0;
+            .modal-title {font-size: 25px;}
+        }
+        .modal-body{
+            padding: 48px 40px;
+        }
+        .close{
+            width: 12px;height: 12px;color: color(850);opacity: 1;
+            @include transition(.3s);padding:0;margin: 0; position: absolute;top: 10px;right: 20px;z-index: 9;
+        }
+	}
+    @include media-breakpoint-down(lg){
+        .modal-lg{max-width: 900px;}
+    }
+    @include media-breakpoint-down(md){
+        .modal-lg{max-width: 720px;}
+        .modal-md{max-width: 450px;}
+        .modal-content{
+            .modal-body{padding: 30px;}
+        }
+    }
+    @include media-breakpoint-down(sm){
+        .modal-lg{max-width: 550px;}
+        .modal-md{max-width: 400px;}
+        .modal-sm{max-width: 310px;}
+        .modal-content{
+            .modal-body{padding: 20px;}
+        }
+    }
+    @include media-breakpoint-down(xs){
+        .modal-lg{max-width: 310px;}
+        .modal-md{max-width: 310px;}
+        .modal-content{
+            .modal-body{padding: 15px;}
+        }
+    }
+}

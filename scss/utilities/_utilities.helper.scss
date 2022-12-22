@@ -1,0 +1,156 @@
+// text preset
+.text-primary {color: color(500) !important;
+}
+.text-secondary {color: color(600) !important;}
+.text-blue {color: color(700) !important;}
+.text-black{color: color(900) !important;}
+.text-green{color: #15D200 !important;}
+.text-grey{color:#BFBFBF;}
+.link-primary{
+  color: color(500);@include transition(.3s);
+  &:hover, &:active, &:focus{color: darken(color(500), 8%);}
+}
+.link-secondary{
+  color: color(600);@include transition(.3s);
+  &:hover, &:active, &:focus{color: darken(color(600), 8%);}
+}
+.link-blue{
+  color: color(700);@include transition(.3s);
+ &:hover, &:active, &:focus{color:darken(color(700), 8%);}
+}
+
+// font classes
+.font-srg {font-family: font(srg) !important;}
+.font-smd {font-family: font(smd) !important;}
+.font-grg {font-family: font(grg) !important;}
+.font-gmd {font-family: font(gmd) !important;}
+.font-gbd {font-family: font(gbd) !important;}
+
+// padding preset
+.py-55{
+  padding: 55px 0;;
+  @media(max-width: 1399px){
+    padding: 50px 0;
+  }
+  @include media-breakpoint-down(lg){
+    padding: 40px 0;
+  }
+ @include media-breakpoint-down(md){
+    padding: 30px 0;
+  }
+  @include media-breakpoint-down(sm){
+    padding: 25px 0;
+  }
+  @include media-breakpoint-down(xs){
+    padding: 20px 0;
+  }
+}
+.my-30{
+  margin: 30px 0;
+  @include media-breakpoint-down(sm){
+    margin: 25px 0;
+  }
+  @include media-breakpoint-down(xs){
+    margin: 15px 0;
+  }
+}
+.f-16{
+  font-size: 16px;
+  @include media-breakpoint-down(xs){
+    font-size: 14px;
+  }
+}
+
+
+//Discover all Button
+.discoverAllBtn{
+  width: 212px;height: 60px;border: 1px solid color(500);display: inline-flex; align-items: center;justify-content: center;
+  font-size: 16px;font-weight: 500;border-radius: 50%;color: color(500);
+  position: relative;
+  &:after{
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    border: 1px solid color(500);
+    border-radius: 50%;
+    opacity: 0;
+    // @include animation(5s animateRotate linear infinite);
+  }
+  &:hover{
+    color: color(500);
+   
+    &:after{
+      transform: rotate(-5deg);
+      @include transition(0.5s ease-in-out);
+      opacity: 1;
+    }
+  }
+  @include media-breakpoint-down(xl){
+      width: 158px;
+      height: 42px;
+  }
+}
+
+@include keyframes(animateRotate) {
+  0% {
+    -webkit-transform: rotate(5deg);
+            transform: rotate(5deg);
+  }
+  50% {
+    -webkit-transform: rotate(-5deg);
+            transform: rotate(-5deg);
+  }
+  100% {
+    -webkit-transform: rotate(5deg);
+            transform: rotate(5deg);
+  }
+  
+}
+
+//ReadMore
+.readMoreBtn{
+  font-size: 16px;font-family: font(smd);color: color(500);line-height: 24px; display: flex;
+  align-items: center;@include transition(all 0.4s);transform: translateX(0);
+  img{
+    margin-left: 10px;transform: translateX(0);@include transition(all 0.4s);
+  }
+  &:hover{
+    color: color(500);transform: translateX(10px);
+    img{
+      transform: translateX(5px);
+    }
+  }
+  @include media-breakpoint-down(md){
+    font-size: 15px;line-height: normal;
+  }
+  @include media-breakpoint-down(sm){
+    font-size: 14px;
+    &:hover{
+      transform: translateX(5px);
+    }
+  }
+}
+
+//sectionHeading
+.sectionHeading{
+  font-family: font(gmd);font-size: 40px;line-height: 52px;color: color(850);font-style: italic;
+  @media(max-width: 1399px){
+    font-size: 36px;line-height:46px;
+  }
+  @include media-breakpoint-down(lg){
+    font-size: 32px;line-height:40px;
+  }
+ @include media-breakpoint-down(md){
+    font-size: 28px;line-height:normal;
+  }
+  @include media-breakpoint-down(sm){
+    font-size: 24px;
+  }
+  @include media-breakpoint-down(xs){
+    font-size: 18px;
+  }
+}
+

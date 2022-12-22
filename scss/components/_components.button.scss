@@ -1,0 +1,94 @@
+.btn{
+    padding:14px 26px;cursor:pointer;font-family:font(srg);font-size: 16px;line-height: 24px;
+    border-radius: 50px;height:56px;box-shadow: none;    white-space: nowrap;display:flex; align-items: center;justify-content: center;
+    &:hover,&:focus,&:active,&:not(:disabled):not(.disabled):active {
+        box-shadow: none;outline: none;
+    }
+    &.btn-md{
+        padding: 8px 24px;height: 40px;
+    }
+    &.btn-primary{
+        border-color:color(500);color: color(50);background-color:color(500);
+        @include transition(all 0.5s);
+        &:hover,&:focus,&:active,&:not(:disabled):not(.disabled):active {
+            border-color:darken(color(500), 8%);box-shadow: none;
+            background: darken(color(500), 8%);color:color(50);
+        }
+        &-outline{
+            border-color:color(500);color: color(500);background-color:transparent;
+            @include transition(all 0.5s);
+            &:hover,&:focus,&:active,&:not(:disabled):not(.disabled):active {
+                border-color:darken(color(500), 8%);box-shadow: none;
+                background: darken(color(500), 8%);color:color(50);
+            }
+        }
+    }
+    &.btn-secondary{
+        border-color:rgba(color(500),0.5);color: rgba(color(100),0.5);background-color:rgba(color(500),0.5);
+        @include transition(all 0.5s);
+        &:hover,&:focus,&:active,&:not(:disabled):not(.disabled):active {
+            border-color:darken(rgba(color(500),0.5), 8%);box-shadow: none;
+            background: darken(rgba(color(500),0.5), 8%);color:color(50);
+        }
+    }
+    &.btn-login{
+        border-color:color(130);color: color(850);background-color:transparent;height: 54px;border-radius: 40px;font-family: font(sbd);
+        @include transition(all 0.5s);display:flex; align-items: center; justify-content: center;position: relative;
+        &:hover,&:focus,&:active,&:not(:disabled):not(.disabled):active {
+            border-color:darken(color(130), 8%);box-shadow: none;
+        }
+        img{position: absolute;left: 20px;}
+    }
+    &.btn-info{
+        border-color:color(700);color: color(50);background-color:color(700);
+        @include transition(all 0.5s);
+        // -webkit-box-shadow: 0 17px 10px -10px rgba(color(700), .4);
+        // box-shadow: 0 17px 10px -10px rgba(color(700), .4);
+        &:hover,&:focus,&:active,&:not(:disabled):not(.disabled):active {
+            border-color:darken(color(700), 8%);box-shadow: none;
+            background: darken(color(700), 8%);color:color(50);
+        }
+    }
+    &.btn-default{
+        border-color:color(50);color: color(600);background-color:color(50);
+        @include transition(all 0.5s);
+        -webkit-box-shadow: -1px 9px 16px 3px rgba(0, 0, 0, 0.1);
+        box-shadow: -1px 9px 16px 3px rgba(0, 0, 0, 0.1);
+        &:hover,&:focus,&:active,&:not(:disabled):not(.disabled):active {
+            border-color:darken(color(50), 8%);box-shadow: none;
+            background: darken(color(50), 8%);color:color(600);
+        }
+    }
+    &.btn-outline-tertiary{
+        border-color:color(700);color: color(700);background-color:transparent;
+        @include transition(all 0.5s);
+        box-shadow: none;
+        &:hover,&:focus,&:active,&:not(:disabled):not(.disabled):active {
+            border-color:darken(color(700), 8%);
+            background: darken(color(700), 8%);color:color(50);
+            -webkit-box-shadow: 0 17px 10px -10px rgba(color(500), .4); 
+             box-shadow: 0 17px 10px -10px rgba(color(500), .4);
+        }
+    }
+    &.btn-transparent{
+        background-color: transparent;border-color: transparent;color: color(900);
+        &:hover,&:focus,&:active,&:not(:disabled):not(.disabled):active {
+            background-color: color(100);border-color: color(100);
+        }
+    }
+    @media (max-width: 1400px){
+        padding: 11px 22px;font-size:15px;height:48px;line-height:normal;
+        &.btn-login{
+            height: 48px;
+        }
+    }
+    @include media-breakpoint-down(md){
+        padding: 10px 15px;font-size:14px;height:40px;
+        &.btn-login{
+            height: 40px;
+        }
+    }
+    @include media-breakpoint-down(xs){
+        font-size: 13px;
+    }
+}

@@ -1,0 +1,28 @@
+//Component
+@import 'components.button';
+@import 'components.bootstrap-select';
+@import 'components.pagination';
+@import 'components.form';
+@import 'components.common-tabs';
+@import 'components.switches';
+@import 'components.table';
+@import 'components.page-header';
+@import 'components.datepicker';
+@import '_components.product-card';
+@import '_components.icomoon';
+@import '_components.country-menu';
+@import '_components.cart-menu';
+@import '_components.voice-search';
+@import '_components.searchMenu';
+
+//layout
+@import 'layout/layout.header';
+@import 'layout/layout.footer';
+
+//modal
+@import 'modals/modal.common-modal';
+@import 'modals/login-modal';
+
+
+
+

@@ -1,0 +1,154 @@
+.searchBarMenu{
+    top:48px;position: fixed;z-index: 99999;width: 100%;visibility: hidden;opacity:0;
+    transform: translateY(-100px); @include transition(0.5s);overflow-y: auto;
+    &_top{ padding: 16px 0;
+        background-color: color(100);height: 110px;backdrop-filter: blur(110px);border-bottom: 1px solid rgba(188, 139, 87, 0.2);
+    }
+    .navbar-search{
+        max-width: 664px;width: 100%;
+        margin: 0 auto;
+        position: relative;
+        .form-control{
+            height: 40px;
+            border-radius: 24px;
+            padding: 6px 16px 6px 45px;
+            font-size: 14px;
+            line-height: 20px;
+            background-color: transparent;
+            &::placeholder{
+                color: #C8C8C8;
+            }
+            &:hover,&:focus{
+                box-shadow: none;
+                border-color: color(500);
+            }
+        }
+        &-icon{
+            position: absolute;
+            top: 43%;
+            left: 15px;
+            transform: translateY(-43%);
+        }
+        .btn-mic{
+            padding: 5px 10px;
+            position: absolute;
+            top: 50%;
+            right: 15px;
+            transform: translateY(-50%);
+            height: auto;
+            display: flex;
+            align-items: center;
+            &:after{
+                content: '';
+                position: absolute;
+                height: 16px;
+                width: 1px;
+                background-color: #c8c8c8;
+                left: -5px;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+        }
+        .deleteBtn{
+            position: absolute;
+            top: 50%;
+            right: 70px;
+            transform: translateY(-50%);padding-bottom: 5px;display: none;
+        }
+        .form-control:focus, .form-control:focus-within{
+            ~.deleteBtn{display: block;}
+        }
+    }
+    &_bottom{
+        background-color: color(100);padding: 24px 0;
+        // &_txt{ max-width:  664px; margin: 0 auto;}
+        h5{font-size: 12px;margin-bottom: 24px; color: #A4A4A4;text-transform: uppercase;max-width: 664px;margin: 0 auto 24px;padding-left: 25px;}
+        .cartBox{
+            padding: 24px 0;@include transition(all 0.4s);
+            &_desc{ max-width: 664px;margin: 0 auto;width: 100%;}
+            &_img{
+                width: 100px;height: 100px;overflow: hidden;
+                img{width: 100%;height: 100%;object-fit: cover;mix-blend-mode: multiply;}
+            }
+            &_cnt{ padding-left: 5px;
+                h5{font-size: 16px;font-family: font(sbd);margin-bottom: 8px;}
+                p{font-size: 12px;color: #727272;margin-bottom: 16px;}
+                span{font-family: font(smd);font-size: 16px;color: color(500);}
+            }
+            &_addCard{
+                display: none;
+            }
+            &:hover{
+                background-color: #F3ECE3;
+                .cartBox_addCard{
+                    display: block;
+                }
+            }
+        }
+    }
+    @include media-breakpoint-down(lg){ top: 37px;
+        &_top{
+            padding: 10px 0;height: 95px;
+        }
+        &_logo{
+            max-height: 70px;
+        }
+        &_bottom{
+            padding: 15px 0;
+            h5{margin-bottom: 15px;}
+            .cartBox{
+                padding: 15px 0;
+                &_img{width: 80px;height: 80px;}
+            }
+        }
+    }
+    @include media-breakpoint-down(md){
+        top: 29px;
+        .navbar-search {max-width: 550px;}
+        &_bottom{
+            h5{margin-bottom: 10px;max-width: 550px;}
+            .cartBox{
+                &_desc{max-width: 550px;}
+            }
+        }
+    }
+    @include media-breakpoint-down(sm){
+        .navbar-search {max-width: 400px;}
+        &_bottom{
+            h5{margin-bottom: 10px;max-width: 400px;}
+            .cartBox{
+                &_desc{max-width: 400px;}
+            }
+        }
+    }
+    @include media-breakpoint-down(xs){
+        &_top{height: 70px;}
+        &_logo{
+            img{max-height: 50px;}
+        }
+        .container-fluid{padding: 0 10px;}
+        .cartMenu_close{right: 10px;top:5px;
+            img{max-width: 10px;}
+        }
+        .navbar-search {max-width: 225px;
+            .btn-mic{right: 7px;}
+        }
+        &_bottom{ 
+            h5{max-width: 100%;padding-left: 10px;}
+            .cartBox{ padding: 10px; margin-bottom: 10px;
+                &_desc{max-width: 100%; display: block !important;}
+                &_addCard{margin-top: 5px;}
+            }
+        }
+    }
+}
+
+body{
+    &.searchBarOpen{
+        .searchBarMenu{
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+    }
+}

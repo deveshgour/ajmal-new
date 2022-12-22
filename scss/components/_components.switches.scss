@@ -1,0 +1,50 @@
+/* Switch ========================================================================== */
+$switch-checked-lever-bg: color(600);
+$switch-bg-color: color(50);
+$switch-unchecked-lever-bg: #707070;
+$switch-radius: 15px;
+$switch-unchecked-bg: color(50);
+$input-disabled-solid-color: 1px solid #DDD;
+
+.switch, .switch *{-webkit-tap-highlight-color:transparent;user-select:none;}
+.switch label {cursor: pointer;margin: 0px;font-size: 15px; color: #9d9d9d;}
+.switch label input[type=checkbox] {
+    opacity: 0;width: 0;height: 0;
+    &:checked~.lever {
+        background-color: color(600);
+        &:before,
+            &:after{left:3px;right: initial;}
+        &:after{background-color: color(50);box-shadow: 4px 0 4px rgba(#970050, .8);}
+    }
+}
+.switch label .lever {
+    content: "";display: inline-block;position: relative;width:30px;height:20px;
+    background-color: #707070;
+    border-radius: 15px;transition: background 0.3s ease;vertical-align: middle;
+    &:before,&:after {
+        content: "";position:absolute;display:inline-block;width:14px;height:14px;
+        border-radius:50%;left:13px;top:50%;transform:translateY(-50%);
+        transition:left 0.3s ease, transform .1s ease;
+        box-shadow: -2px 0 4px rgba(color(900), .8);
+    }
+    &:after {
+        background-color: color(50);
+    }
+}
+// Switch active style
+input[type=checkbox]:checked:not(:disabled)~.lever:active::before,
+input[type=checkbox]:checked:not(:disabled).tabbed:focus~.lever::before {
+    background-color: $switch-bg-color;
+}
+input[type=checkbox]:not(:disabled)~.lever:active:before,
+input[type=checkbox]:not(:disabled).tabbed:focus~.lever::before {
+    background-color: rgba(0, 0, 0, .02);
+}
+// Disabled Styles
+.switch input[type=checkbox][disabled]~.lever {
+    cursor: default;background-color: rgba(color(900), .12);
+}
+.switch label input[type=checkbox][disabled]~.lever:after,
+.switch label input[type=checkbox][disabled]:checked~.lever:after {
+    background-color: $input-disabled-solid-color;
+}

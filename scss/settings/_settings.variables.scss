@@ -1,0 +1,58 @@
+// color variables
+$colors:(
+     50: #fff,
+    60: #F5FAFE, 
+    70:#ECF8F8,
+    80:#F8F4F1,
+    90:#FFF5EB,
+    100: #F9F5F1,
+    120: #EBEBEB,
+    130: #C8C8C8,
+    150: #A4A4A4,
+    160: #7F7F7F, 
+    180: #707070,       
+    200: #35379D,       
+    250: #222222, 
+    500: #BC8B57, 
+    550: #A78A68,
+    600: #BE4040,
+    700: #727272,         
+    800: #00D199,
+    850: #2B2826,         
+    900: #000000,
+);
+
+@function color($color-name, $color-variant:null) {
+   @if ($color-variant != null) {
+    // map inception
+    @return map-get(map-get($colors, $color-name), $color-variant);
+  } @else {
+    @return map-get($colors, $color-name);
+  }
+}
+
+// fonts
+$fonts : (
+  srg    : 'Satoshi-Regular',
+  smd    : 'Satoshi-Medium',
+  sbd    : 'Satoshi-Bold',
+  grg    : 'Gambetta-Regular',
+  gmd    : 'Gambetta-Medium',
+  gbd    : 'Gambetta-Bold',
+  
+);
+
+@function font($font-name, $font-variant:null) {
+   @if ($font-variant != null) {
+    // map inception
+    @return map-get(map-get($fonts, $font-name), $font-variant);
+  } @else {
+    @return map-get($fonts, $font-name);
+  }
+}
+
+
+$imageurl       :    "../images";
+$fonturl        :    "../fonts";
+
+

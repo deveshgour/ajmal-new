@@ -1,0 +1,281 @@
+// form controls
+.form-group, .input-group{
+  position: relative; margin-bottom: 16px;
+  label{
+    display: block;margin-bottom: 10px;font-size: 15px;color: rgba(color(900), .8);
+    font-family: font(md);
+    .switch{margin-right: 10px;}
+    .small{font-size: 13px;color: rgba(color(900), .5);}
+  }
+  .label{
+    margin-bottom: 10px;
+    .switch{margin-right: 10px;}
+    label{vertical-align: middle;}
+  }
+  .form-control{
+    height:56px;color:color(900);font-size:16px;border-radius: 0;background-clip: initial;
+    font-family: font(srg);font-weight:400;padding: 16px 24px;
+    &-border{
+      border-radius: 40px;background-color: transparent;
+    }
+    &::placeholder{
+      color: #A4A4A4;
+    }
+    &:focus{outline:none;-webkit-box-shadow:none;box-shadow:none;border-color:color(500);}
+    &:valid, &:invalid{
+      &:focus{outline:none;-webkit-box-shadow:none;box-shadow:none;}
+    }
+    &:disabled{background-color:color(50);color:rgba(color(900), .2);}
+    &[readonly]{background-color: #F4F4F4;color:#ADADAD;}
+  }
+  input.form-control, textarea.form-control{
+    padding: 10px 20px; border-color: #CCD0D4;
+    @include placeholder {color: rgba(color(900), .5);}
+  }
+  input[type="url"]{
+    &.form-control{
+      color: color(700);
+      &:disabled, &:read-only{color: rgba(color(900), .2);}
+    }
+  }
+  textarea.form-control{height:auto;min-height: 100px;resize:none}
+  .searchField{
+    position: relative;
+    input{padding-right: 40px !important;}
+    .searchBtn{
+      position: absolute; padding: 0; background:transparent;border: 0;right: 14px;top: 16px;font-size: 16px;
+    }
+  }
+  @include media-breakpoint-down(md){
+    .form-control{ height: 48px;};
+  }
+  @include media-breakpoint-down(sm){
+    .form-control{ height: 40px;};
+  }
+}
+
+// custom checkbox
+.custom-checkbox{
+  padding-left: 25px;
+  .custom-control-input {
+    z-index: 1;width: 16px;height: 16px;cursor: pointer; border: 1px solid rgba(color(500),0.4);
+    &:focus {
+      ~.custom-control-label {
+        &:before {-webkit-box-shadow: none;box-shadow: none;}
+      }
+    }
+    &:not(:disabled):active ~ .custom-control-label::before{
+      background-color: color(50);border-color: #898989;
+    }
+    &:focus:not(:checked) ~ .custom-control-label::before{border-color: #898989;}
+  }
+  .custom-control-input:checked~.custom-control-label {
+    &:after {
+      font-family: 'icomoon';content: "\e905";font-size: 10px;font-weight: 900;
+      background-image: none;color: color(50);top: -1px;left: 3px;
+    }
+    &:before {border-color: color(500);border-radius:4px;background: color(500);}
+  }
+  .custom-control-label {
+    width: 100%;cursor: pointer;color: color(850);position: static;
+    font-size:14px;font-family:font(srg);line-height: 20px;  
+    &:before {
+      left: 0px;width: 16px;height: 16px;border-radius: 4px;background: transparent;
+      top: 0px; border: 1px solid rgba(color(500),0.4);@include transition(all 0.3s);
+    }
+    &:after {left:3px; top:4px;@include transition(all 0.3s);}
+  }
+}
+
+// custom radio
+.custom-radio{
+  margin-top: 15px;padding-left: 25px;
+  .custom-control-input {
+    z-index: 1;width: 20px;height: 20px;cursor: pointer; 
+    &:focus {
+      ~.custom-control-label {
+        &:before {-webkit-box-shadow: none;box-shadow: none;}
+      }
+    }
+    &:not(:disabled):active ~ .custom-control-label::before{
+      background-color: color(50);border-color: #898989;
+    }
+    &:focus:not(:checked) ~ .custom-control-label::before{border-color: #898989;}
+  }
+  .custom-control-input:checked~.custom-control-label {
+    &:after {background-image: none;background-color:color(600);}
+    &:before {border-color: color(600);background-color:transparent;}
+  }
+  .custom-control-label {
+    width: 100%;cursor: pointer;color: color(900);position: static;
+    font-size:16px;font-family:font(md);line-height: 18px;  
+    &:before {
+      width: 20px;height: 20px;left: 0px;top: 0px;border-color:rgba(color(900), .2);
+      @include transition(all 0.3s);
+    }
+    &:after {
+      left:4px; top:4px;border-radius: 50%;width:12px;height:12px;
+      @include transition(all 0.3s);background-color:rgba(color(900), .2);
+    }
+  }
+  @include media-breakpoint-down(md) {
+    padding-left: 23px;
+    .custom-control-input {width: 18px;height: 18px;}
+    .custom-control-label{
+      font-size:15px;
+      &:before {width: 18px;height: 18px;}
+      &:after {width:10px;height:10px;}
+    }
+  }
+}
+
+// common note message
+.note{
+  color: rgba(color(900), .6);font-size: 15px;
+  @include media-breakpoint-down(lg){ font-size: 14px; }
+}
+
+.bundleBox{
+  &__txt{
+    color: rgba(color(900), .5);font-size: 17px;min-width: 130px;margin: 0 15px;
+  }
+  @include media-breakpoint-down(lg){
+    &__txt{font-size: 15px;min-width: 115px;}
+  }
+  @include media-breakpoint-down(xs){
+    &__txt{font-size: 14px;min-width: 105px;}
+  }
+  @media(max-width:419px){
+    display: block !important;
+    &__txt{margin: 10px 0;text-align: center;}
+  }
+}
+
+.profileWrap{
+  height: 230px;background-color: color(900);
+  &__upload{
+    top: 0;bottom: 0;left: 0;right: 0;background-color: rgba(color(900), .6);
+    input{top: 0;bottom: 0;left: 0;right: 0;cursor: pointer;opacity: 0;}
+    &--user{border-radius: 40px;}
+  }
+  &__txt{
+    font-size: 17px;border: 2px dashed rgba(color(50), .3);padding: 20px 45px;
+    i{font-size: 18px;margin-right: 15px;}
+  }
+  &__remove{
+    width: 40px;height: 40px;background-color: #707070;@include transition(.3s);
+    top: 15px;right: 15px;font-size: 12px;
+    &:hover, &:active, &:focus{background-color: color(600);color: color(50)}
+    &--user{
+      width: 30px;height: 30px;background-color: color(50);color: color(500);
+      font-size: 9px;top: -5px;right: -5px;
+    }
+  }
+  &--user{
+    width: 100px;height: 100px;border-radius: 40px;border: 3px solid color(50);
+    margin-top: -50px;background-color: color(900);
+    img{border-radius: 40px;}
+  }
+  @media(max-width:1599px){
+    &__txt{padding: 15px 35px;}
+  }
+  @include media-breakpoint-down(md){
+    height: 180px;
+    &__remove{
+      width:30px;height:30px;font-size:9px;
+      &--user{width: 22px;height: 22px;font-size: 7px;top: -4px;right: -6px;}
+    }
+    &__txt{padding: 10px 20px;font-size: 15px;}
+    &--user{
+      width: 85px;height: 85px;border-radius: 25px;margin-top: -40px;
+      img{border-radius: 25px;}
+    }
+    &__upload{
+      &--user{border-radius: 25px;}
+    }
+  }
+  @include media-breakpoint-down(sm){
+    height: 160px;
+    &__txt{
+      padding: 8px 15px;font-size: 14px;
+      i{font-size: 16px;margin-right: 10px;}
+    }
+    &__remove{
+      width:25px;height:25px;font-size:8px;top: 10px;right: 10px;
+      &--user{width: 22px;height: 22px;font-size: 7px;top: -4px;right: -6px;}
+    }
+  }
+}
+
+.passwordProgress{
+  margin-top: 5px;
+  .progress{
+    width: 365px;max-width: 100%;height: 8px;background-color: #F2F2F2;font-size:0;
+    border-radius:0;
+    .progress-bar{background-color:#FACA00;}
+  }
+  @include media-breakpoint-down(lg){
+    .progress{width: 320px;}
+  }
+  @include media-breakpoint-down(md){
+    .progress{width: 220px;}
+  }
+  @include media-breakpoint-down(xs){
+    .progress{width: 180px;}
+  }
+}
+
+.switchGroup{
+  label{font-size: 17px;}
+  .switch{min-width: 30px;}
+  @include media-breakpoint-down(lg){
+    label{font-size: 16px;}
+  }
+  @include media-breakpoint-down(sm){
+    label{font-size: 15px;}
+  }
+}
+
+.fromLink{
+  margin-top: 10px;
+  a{
+    color: rgba(color(900), .5);@include transition(.3s);font-size: 17px;
+    &:hover, &:active, &:focus{color: color(600);}
+  }
+  @media(max-width:1599px){
+    a{font-size: 16px;}
+  }
+  @include media-breakpoint-down(lg){
+    margin-top: 5px;
+    a{font-size: 15px;}
+  }
+}
+
+.form-group{
+  &.datePicker{
+    &:after{
+      content: "\e902";font-family: 'icomoon' !important;font-size: 22px;
+      position: absolute;right: 20px;top: 10px;color: rgba(color(500), .5);
+    }
+    .form-control{padding-right: 62px;}
+  }
+}
+
+.dateGroup{
+  .form-group{
+    &.datePicker{
+      &:after{right:10px;top:9px;font-size:14px;}
+      .form-control{
+        background-color: rgba(color(500), .1);height: 38px;padding: 10px;
+        border: none;font-size: 13px;padding-right: 34px;
+      }
+    }
+    &:first-child{
+      border-right: 1px solid #D0D3DB;
+      .form-control{border-top-right-radius: 0;border-bottom-right-radius: 0;}
+    }
+    &:last-child{
+      .form-control{border-top-left-radius: 0;border-bottom-left-radius: 0;}
+    }
+  }
+}

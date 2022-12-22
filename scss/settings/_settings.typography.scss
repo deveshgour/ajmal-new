@@ -1,0 +1,64 @@
+// fonts
+
+@font-face {
+    font-family: 'Satoshi-Regular';
+    src: url('../fonts/Satoshi-Regular.eot');
+    src: url('../fonts/Satoshi-Regular.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Satoshi-Regular.woff2') format('woff2'),
+         url('../fonts/Satoshi-Regular.woff') format('woff'),
+         url('../fonts/Satoshi-Regular.ttf') format('truetype'),
+         url('../fonts/Satoshi-Regular.svg#Satoshi-Regular') format('svg');
+    font-weight:normal;font-style:normal;font-display:swap;
+}
+@font-face {
+    font-family: 'Satoshi-Medium';
+    src: url('../fonts/Satoshi-Medium.eot');
+    src: url('../fonts/Satoshi-Medium.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Satoshi-Medium.woff2') format('woff2'),
+         url('../fonts/Satoshi-Medium.woff') format('woff'),
+         url('../fonts/Satoshi-Medium.ttf') format('truetype'),
+         url('../fonts/Satoshi-Medium.svg#Satoshi-Medium') format('svg');
+    font-weight:normal;font-style:normal;font-display:swap;
+}
+@font-face {
+    font-family: 'Satoshi-Bold';
+    src: url('../fonts/Satoshi-Bold.eot');
+    src: url('../fonts/Satoshi-Bold.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Satoshi-Bold.woff2') format('woff2'),
+        url('../fonts/Satoshi-Bold.woff') format('woff'),
+        url('../fonts/Satoshi-Bold.ttf') format('truetype'),
+        url('../fonts/Satoshi-Bold.svg#Satoshi-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Gambetta-Regular';
+    src: url('../fonts/Gambetta-Regular.eot');
+    src: url('../fonts/Gambetta-Regular.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Gambetta-Regular.woff2') format('woff2'),
+         url('../fonts/Gambetta-Regular.woff') format('woff'),
+         url('../fonts/Gambetta-Regular.ttf') format('truetype'),
+         url('../fonts/Gambetta-Regular.svg#Gambetta-Regular') format('svg');
+    font-weight:normal;font-style:normal;font-display:swap;
+}
+@font-face {
+    font-family: 'Gambetta-Medium';
+    src: url('../fonts/Gambetta-Medium.eot');
+    src: url('../fonts/Gambetta-Medium.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Gambetta-Medium.woff2') format('woff2'),
+         url('../fonts/Gambetta-Medium.woff') format('woff'),
+         url('../fonts/Gambetta-Medium.ttf') format('truetype'),
+         url('../fonts/Gambetta-Medium.svg#Gambetta-Medium') format('svg');
+    font-weight:normal;font-style:normal;font-display:swap;
+}
+@font-face {
+    font-family: 'Gambetta-Bold';
+    src: url('../fonts/Gambetta-Bold.eot');
+    src: url('../fonts/Gambetta-Bold.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Gambetta-Bold.woff2') format('woff2'),
+         url('../fonts/Gambetta-Bold.woff') format('woff'),
+         url('../fonts/Gambetta-Bold.ttf') format('truetype'),
+         url('../fonts/Gambetta-Bold.svg#Gambetta-Bold') format('svg');
+    font-weight:normal;font-style:normal;font-display:swap;
+}

@@ -1,0 +1,242 @@
+.loginSignUpModal{
+    &_left{
+        width: 100%;max-width: 640px;background-color: color(100);padding: 48px 120px;text-align: center;
+    }
+    &_right{
+        width: 100%;max-width: 400px;position: relative;z-index: 1;padding: 0 40px;
+        &::before{
+            background-image: url(#{$imageurl}/login-bg.png);position: absolute;top:0;
+            left: 0;width: 100%;height: 100%;content: "";z-index: -1;background-color: color(500);
+            background-repeat: no-repeat;background-size: cover;
+        }
+        
+    }
+    h3{font-size: 32px;font-weight: 500;font-family: font(gmd);font-style: italic;margin-bottom: 24px;color: color(900);}
+    .loginBtns{
+        li{
+            &:not(:last-child){margin-bottom: 8px;}
+        }
+    }
+    P{
+        font-size: 16px;line-height: 22px;margin-bottom: 30px;color: color(850);
+    }
+    .divider{
+        font-size: 12px;line-height: 16px;color: color(850);margin: 24px 0;font-weight:500;text-transform:uppercase;
+        &::before{
+            position: absolute;top:50%;left: 0;width: 85px;height: 1px;background-color: rgba(color(850),0.2);content: "";
+            transform: translateY(-50%);
+        }
+        &::after{
+            position: absolute;top:50%;right: 0;width: 85px;height: 1px;background-color: rgba(color(850),0.2);content: "";
+            transform: translateY(-50%);
+        }
+    }
+    .signUpDiv{
+        display: none !important;
+    }
+    &.showSignUp{
+        .signUpDiv{
+            display: block !important;
+        }
+        .loginDiv{
+            display: none;
+        }
+        .loginSignUpModal_left{
+            transform : translateX(400px);
+            transition: 1s cubic-bezier(0.35, 0, 0, 1);
+        }
+        .loginSignUpModal_right{
+            transform : translateX(-640px);
+            transition: 1s cubic-bezier(0.35, 0, 0, 1);
+        }
+    }
+    .loginSignUpModal_left, .loginSignUpModal_right{
+        transform : translateX(0px);
+        transition: 1s cubic-bezier(0.35, 0, 0, 1);
+    }
+    .loginSignUpModal_left, .loginSignUpModal_right{
+        .signUpDiv{
+            display: none;
+        }
+        &.signInModalShow{
+            .signUpDiv{
+                display: none;
+            }
+            .loginDiv{
+                display: block;
+            } 
+        }
+    }
+    @include media-breakpoint-down(lg){
+        h3{font-size: 28px;margin-bottom: 15px;}
+        p{
+            font-size: 14px;margin-bottom: 20px;
+        }
+        .divider{margin: 15px 0;}
+        &_left{
+            padding: 30px 60px;max-width: 530px;
+        }
+        &_right{
+            max-width: 370px;padding: 0 30px;;
+        }
+        &.showSignUp{
+            .loginSignUpModal_left{
+                transform : translateX(370px);
+            }
+            .loginSignUpModal_right{
+                transform : translateX(-530px);
+            }
+        }
+    }
+    @include media-breakpoint-down(md){
+        h3{font-size: 24px;margin-bottom: 10px;}
+        p{
+            margin-bottom: 15px;
+        }
+        .divider{margin: 10px 0;font-size:11px;
+            &::before{width: 70px;}
+            &::after{width: 70px;}
+        }
+        &_left{
+            padding: 25px 20px;max-width: 450px;
+        }
+        &_right{
+            max-width: 270px;padding: 0 20px;
+        }
+        &.showSignUp{
+            .loginSignUpModal_left{
+                transform : translateX(270px);
+            }
+            .loginSignUpModal_right{
+                transform : translateX(-450px);
+            }
+        }
+    }
+    @include media-breakpoint-down(sm){
+        h3{font-size: 20px;}
+        p{
+            margin-bottom: 10px;font-size: 12px;
+        }
+        .divider{
+            &::before{width: 50px;}
+            &::after{width: 50px;}
+        }
+        &_left{
+            padding: 20px 15px;max-width: 325px;
+        }
+        &_right{
+            max-width: 225px;padding: 0 15px;
+        }
+        &.showSignUp{
+            .loginSignUpModal_left{
+                transform : translateX(225px);
+            }
+            .loginSignUpModal_right{
+                transform : translateX(-325px);
+            }
+        }
+    }
+    @include media-breakpoint-down(xs){
+        h3{font-size: 18px;}
+        .divider{margin: 8px 0;
+            &::before{display: none;}
+            &::after{display: none;}
+        }
+        &_left{
+            padding: 15px 10px;max-width: 100%;
+        }
+        &_right{
+            max-width: 100%;padding: 15px 10px;
+        }
+        &.showSignUp{
+            .loginSignUpModal_left{
+                transform : translateY(135px);
+            }
+            .loginSignUpModal_right{
+                transform : translateY(-510px);
+            }
+        }
+    }
+}
+.form-group{
+    &.floting{
+        input{
+            position: relative;
+        }
+        .form-control-placeholder{
+            font-size: 16px;color: #A4A4A4;margin: 0;position: absolute;
+            top: 17px;
+            left: 20px;@include transition(all 0.5s linear);
+        }
+        .form-control:focus, .form-control:valid{
+            ~.form-control-placeholder{
+                font-size: 12px;
+                top: 5px;
+                @include transition(all 0.3s);
+            }
+        }
+    }
+    .passwordField{
+        position: relative;
+        &_icons{
+            position: absolute;top:50%;right: 25px;width: 20px;height: 20px;transform: translateY(-50%);cursor: pointer;
+        }
+    }
+    @include media-breakpoint-down(md){
+        &.floting{
+            .form-control-placeholder{
+                font-size: 14px;top: 15px;
+            }
+            .form-control:focus, .form-control:valid{
+                ~.form-control-placeholder{
+                    font-size: 11px;
+                    top: 5px;
+                }
+            }
+        }
+    }
+    @include media-breakpoint-down(sm){
+        &.floting{
+            .form-control-placeholder{
+                font-size: 12px;top: 10px;
+            }
+            .form-control:focus, .form-control:valid{
+                ~.form-control-placeholder{
+                    font-size: 10px;
+                    top: 2px;
+                }
+            }
+        }
+    }
+}
+.passwordModal{
+    background-color: color(100);
+    h3{font-size: 32px;font-weight: 500;font-family: font(gmd);font-style: italic;margin-bottom: 24px;color: color(900);}
+    a{ font-size: 14px;line-height: 20px;color: color(850);
+        &:hover{
+            color: color(500);
+        }
+    }
+    p{
+        font-size: 14px;color: color(850);
+    }
+    &.codeModal{
+        input{
+            width: 54px;height: 54px;border-radius: 8px;border: 1px solid #C8C8C8;
+        }
+    }
+    @include media-breakpoint-down(md){
+        h3{font-size: 24px;margin-bottom: 15px;}
+    }
+    @include media-breakpoint-down(sm){
+        h3{font-size: 21px;margin-bottom: 10px;}
+        &.codeModal{
+            input{
+                width: 45px;height: 45px;
+            }
+        }
+    }
+    @include media-breakpoint-down(xs){
+        h3{font-size: 18px;}
+    }
+}

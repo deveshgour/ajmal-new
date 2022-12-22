@@ -1,0 +1,123 @@
+.bootstrap-select > select.mobile-device:focus + .dropdown-toggle, 
+.bootstrap-select .dropdown-toggle:focus{outline: 0 !important;}
+.bootstrap-select {
+    height: auto;
+    .dropdown-toggle {
+        font-size: 17px;border-color: #DDDDDD;border-radius: 5px;line-height: 29px;
+        -webkit-transition: none;-o-transition: none;transition: none;color: color(900);
+        background-color: transparent;padding: 10px 20px;height: 54px;letter-spacing: normal;
+        font-family: font(md);
+        &.btn-light {border-color: #DDDDDD !important;}
+        .filter-option-inner {padding-right: 0px;}
+        &:hover,
+        &:focus,
+        &:active:focus,
+        &:active,
+        &:active:hover,
+        &:not(:disabled),
+        &:not(.disabled):active {
+            background-color: transparent !important;box-shadow: none !important;
+            outline: none !important;color: color(100);-webkit-box-shadow: none !important;
+            outline: 0 !important;outline: 0 auto -webkit-focus-ring-color !important;
+        }
+        .filter-option-inner-inner {
+            color: color(900);@include text-overflow();
+            // display: inline-block;
+            width: 100%;padding-right: 5px;
+        }
+        &:after {
+            content: "\e90d";font-family: 'icomoon';vertical-align: middle;right: 0px;
+            border: none;position: relative;color: #121F46;top: 1px;font-size: 14px;
+        }
+        &.bs-placeholder {
+            .filter-option-inner-inner {color: rgba(color(900), .5);}
+        }
+    }
+
+    // when show class add
+    &.form-control {z-index: initial;}
+    &.show {
+        .dropdown-toggle {
+            border-color: color(900);border-radius: 5px 5px 0 0; 
+            &.btn-light {border-color: color(500) !important;}
+        }
+        .dropdown-menu {
+            min-width: 100% !important;border-color: color(500);border-radius: 5px; z-index: 3;
+            width: 100%;background-color: color(50);margin-top: 0px;padding: 0;border-top: 0;
+            border-radius: 0 0 5px 5px;
+            ul {display: block !important;}
+            .inner {
+                li {
+                    &.active, &:active, &.selected {
+                        a {
+                            background-color: color(900);color: color(50);
+                            span {top: 10px;}
+                        }
+                    }
+                    a {
+                        padding: 10px 20px;font-size: 17px;white-space: normal;line-height: normal;
+                        &:focus{outline: none !important;}
+                        &.active, &:active, &:hover{
+                            background-color: color(500);color: color(50);
+                            span {top: 10px;}
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // when dropup class add
+    &.dropup {
+        .dropdown-toggle{
+            border-radius: 0 0 5px 5px;
+        }
+        .dropdown-menu.show {
+            >.inner.show{border-top:1px solid color(500);} 
+        }
+        .dropdown-menu {padding: 0; margin-bottom: 0; border-bottom: 0; border-top: 0; border-radius: 5px 5px 0 0;}
+    }
+
+    @media(max-width:1599px){
+        .dropdown-toggle {
+            height: 46px; font-size: 15px;line-height: 23px;padding: 10px 15px;
+            &:after {font-size: 12px;}
+        }
+        &.show {
+            .dropdown-menu {
+                .inner {
+                    li {
+                        a{font-size:15px;}
+                    }
+                }
+            }
+        }
+    }
+
+    @include media-breakpoint-down(md) {
+        .dropdown-toggle {
+            height: 40px;padding: 6px 15px;font-size: 14px;line-height: 24px;
+            &:after {top: 0;font-size: 10px;margin-left: 0;}
+            +.dropdown-menu {
+                .inner {
+                    li {
+                        a {font-size: 14px;padding: 6px 15px;}
+                    }
+                }
+            }
+        }
+    }
+
+    @include media-breakpoint-down(xs) {
+        .dropdown-toggle {
+            padding: 6px 10px;
+            +.dropdown-menu {
+                .inner {
+                    li {
+                        a {padding: 6px 10px;}
+                    }
+                }
+            }
+        }
+    }
+}
