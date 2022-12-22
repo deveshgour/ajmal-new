@@ -1,0 +1,25 @@
+{
+  "name": "ajmal",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Gruntfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://devesh_freshcode@bitbucket.org/devesh_freshcode/ajmal.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://bitbucket.org/devesh_freshcode/ajmal/issues"
+  },
+  "homepage": "https://bitbucket.org/devesh_freshcode/ajmal#readme",
+  "dependencies": {
+    "grunt": "^1.5.3",
+    "grunt-contrib-watch": "^1.1.0",
+    "grunt-sass": "^3.1.0",
+    "node-sass": "^7.0.3"
+  }
+}
